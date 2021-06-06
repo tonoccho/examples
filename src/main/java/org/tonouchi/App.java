@@ -6,16 +6,15 @@ package org.tonouchi;
  */
 public class App {
     /**
-     * Do nothing
+     * Do nothing.
      */
-    protected App(){}
+    protected App() { }
 
     /**
-     * Main method
+     * Main method.
      * @param args command line arguments
      */
-    public static void main(final String[] args)
-    {
-        System.out.println( "Hello World!" );
+    public static void main(final String[] args) {
+        System.out.println("Hello World!");
     }
 }
