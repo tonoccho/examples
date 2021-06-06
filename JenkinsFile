@@ -9,7 +9,7 @@ pipeline{
         }
         stage("compilation") {
             steps{
-                mvnw 'clean install'
+                sh "mvnw 'clean install'"
             }
         }
     }
