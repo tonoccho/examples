@@ -13,6 +13,16 @@ pipeline{
                sh './mvnw --batch-mode -V -U -e clean verify -Dsurefire.useFile=false -Dmaven.test.failure.ignore'
             }
         }
+        stage('coverage') {
+            steps {
+                jacoco(
+                      execPattern: 'target/*.exec',
+                      classPattern: 'target/classes',
+                      sourcePattern: 'src/main/java',
+                      exclusionPattern: 'src/test*'
+                )
+            }
+        }
         stage('analysis') {
             steps {
                 sh './mvnw --batch-mode -V -U -e jxr:jxr checkstyle:checkstyle pmd:pmd pmd:cpd findbugs:findbugs spotbugs:spotbugs'
