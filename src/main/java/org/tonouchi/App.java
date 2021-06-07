@@ -11,10 +11,12 @@ public class App {
     protected App() { }
 
     /**
-     * Main method.
-     * @param args command line arguments
+     * Do add.
+     * @param a num 1
+     * @param b num 2
+     * @return a + b
      */
-    public static void main(final String[] args) {
-        System.out.println("Hello World!");
+    public int add(int a, int b) {
+        return a + b;
     }
 }
