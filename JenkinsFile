@@ -18,6 +18,13 @@ pipeline{
                sh './mvnw --batch-mode -V -U -e jacoco:prepare-agent test jacoco:report'
             }
         }
+        stage('Build') {
+             steps {
+                sh './jenkins_build.sh'
+                junit '*/build/test-results/*.xml'
+                step( [ $class: 'JacocoPublisher' ] )
+             }
+        }
         stage('analysis') {
             steps {
                 sh './mvnw --batch-mode -V -U -e jxr:jxr checkstyle:checkstyle pmd:pmd pmd:cpd spotbugs:spotbugs jacoco:report'
