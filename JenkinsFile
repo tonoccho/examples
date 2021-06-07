@@ -10,12 +10,12 @@ pipeline{
         }
         stage("compilation") {
             steps{
-               sh './mvnw --batch-mode -V -U -e clean verify -Dsurefire.useFile=false -Dmaven.test.failure.ignore'
+               sh './mvnw --batch-mode -V -U -e clean compile -Dsurefire.useFile=false -Dmaven.test.failure.ignore'
             }
         }
         stage("test") {
             steps{
-               sh './mvnw --batch-mode -V -U -e clean jacoco:prepare-agent test jacoco:report'
+               sh './mvnw --batch-mode -V -U -e jacoco:prepare-agent test jacoco:report'
             }
         }
         stage('analysis') {
