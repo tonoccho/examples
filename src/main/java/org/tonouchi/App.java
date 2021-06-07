@@ -16,7 +16,7 @@ public class App {
      * @param b num 2
      * @return a + b
      */
-    public int add(int a, int b) {
+    public int add(final int a, final int b) {
         return a + b;
     }
 }
