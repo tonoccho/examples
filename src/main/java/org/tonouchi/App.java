@@ -20,12 +20,26 @@ public class App {
         return a + b;
     }
 
+    /**
+     * Do add 2
+     * @param a numn 1
+     * @param b num 2
+     * @return a + b
+     */
     public int add2(final int a, final int b) {
         return a + b;
     }
 
+    /**
+     * Do add conditionally
+     * @param a
+     * @param b
+     * @return
+     */
     public int add3(final int a, final int b) {
-        if (a > b) throw new IllegalArgumentException("ERROR!!!");
+        if (a > b) {
+            throw new IllegalArgumentException("ERROR!!!");
+        }
         return a + b;
     }
 }
