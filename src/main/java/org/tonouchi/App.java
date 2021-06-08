@@ -22,7 +22,7 @@ public class App {
 
     /**
      * Do add 2.
-     * @param a numn 1
+     * @param a num 1
      * @param b num 2
      * @return a + b
      */
@@ -32,8 +32,8 @@ public class App {
 
     /**
      * Do add conditionally.
-     * @param a
-     * @param b
+     * @param a num1
+     * @param b num2
      * @return a + b
      */
     public int add3(final int a, final int b) {
