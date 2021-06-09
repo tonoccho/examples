@@ -1,11 +1,10 @@
 package org.tonouchi;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
-
+import static org.junit.jupiter.api.Assertions.*;
 /**
  * Unit test for simple App.
  */
@@ -13,12 +12,12 @@ public class AppTest
 {
     private App app;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         app = new App();
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         app = null;
     }
@@ -38,9 +37,8 @@ public class AppTest
         assertEquals(8, app.add3(3, 5));
     }
 
-    @Test (expected = IllegalArgumentException.class)
+    @Test
     public void testAdd3_numm1MustBeSmallerThanNum2() {
-        app.add3(3, 2);
-        fail();
+        assertThrows(IllegalArgumentException.class, () -> app.add3(3, 2));
     }
 }
